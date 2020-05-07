@@ -1,11 +1,5 @@
 class HolaMundo {
   String nombre
-  String getNombre() {
-    return nombre
-  }
-  void setNombre(String nombre) {
-    this.nombre = nombre
-  }
 
   String saluda() {
     return "Hola " + this.nombre + " !!!"
