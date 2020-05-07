@@ -6,8 +6,7 @@ class HolaMundo {
   }
 
   static void main(String[] args) {
-    HolaMundo objeto = new HolaMundo()
-    objeto.setNombre("@grailsmx")
+    HolaMundo objeto = new HolaMundo(nombre:"@grailsmx")
     println(objeto.saluda())
   }
 }
