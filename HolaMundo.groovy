@@ -8,6 +8,6 @@ class HolaMundo {
   static void main(String[] args) {
     HolaMundo objeto = new HolaMundo()
     objeto.setNombre("@grailsmx")
-    System.out.println(objeto.saluda())
+    println(objeto.saluda())
   }
 }
