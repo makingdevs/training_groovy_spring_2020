@@ -1,17 +1,17 @@
-public class HolaMundo {
-  private String nombre;
-  public String getNombre() {
+class HolaMundo {
+  String nombre;
+  String getNombre() {
     return nombre;
   }
-  public void setNombre(String nombre) {
+  void setNombre(String nombre) {
     this.nombre = nombre;
   }
 
-  public String saluda() {
+  String saluda() {
     return "Hola " + this.nombre + " !!!";
   }
 
-  public static void main(String[] args) {
+  static void main(String[] args) {
     HolaMundo objeto = new HolaMundo();
     objeto.setNombre("@grailsmx");
     System.out.println(objeto.saluda());
