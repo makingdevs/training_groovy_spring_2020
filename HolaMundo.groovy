@@ -1,7 +1,7 @@
 class HolaMundo {
-  String nombre
+  def nombre
 
-  String saluda() {
+  def saluda() {
     return "Hola " + this.nombre + " !!!"
   }
 
