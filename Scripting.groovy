@@ -20,3 +20,15 @@ Persona persona = new Persona()
 persona.setNombre("Rodrigo")
 
 println persona.dump()
+
+Perfil perfil = new Perfil()
+try{
+  perfil.setBio("Mi bio")
+}catch(Exception e){
+  println "No se puede establecer la biografia...."
+}
+
+Pedido pedido = new Pedido()
+pedido.setDateCreated(new Date())
+pedido.setComprador(persona)
+println pedido
