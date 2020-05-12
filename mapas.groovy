@@ -11,6 +11,18 @@ map["cuatro"] = 4
 println map
 println map.tres
 
-map.each {
-  println it
+map.each { k, v ->
+  println "$k ===>  $v"
+}
+
+println map.findAll { k, v ->
+  v > 2
+}
+
+println map.findAll { k, v ->
+  k.contains("u")
+}
+
+println map.find { k, v ->
+  k.contains("u")
 }
