@@ -22,3 +22,15 @@ println lista
 
 subLista = lista[4..6]
 println subLista.dump()
+
+lista = lista * 2
+println lista
+println lista.unique()
+
+lista = lista.findAll() { it.class == Integer }
+
+lista = lista.collect { it * it  }
+
+println lista
+
+println lista.sum()
