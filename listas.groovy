@@ -27,10 +27,7 @@ lista = lista * 2
 println lista
 println lista.unique()
 
-lista = lista.findAll() { it.class == Integer }
-
-lista = lista.collect { it * it  }
-
-println lista
-
-println lista.sum()
+println lista.findAll() {
+   it.class == Integer }.collect {
+     it * it
+   }.sum()
