@@ -27,5 +27,12 @@ displayMouseLocation = { positionLabel.setText("$it.x , $it.y") }
 frame.addMouseListener( displayMouseLocation as MouseListener )
 frame.addMouseMotionListener( displayMouseLocation as MouseMotionListener )
 
+handleFocus = [
+  focusGained : { msgLabel.setText "Good 2 see you..." },
+  focusLost : { msgLabel.setText "Come back soon!!!..." }
+]
+
+button.addFocusListener( handleFocus as FocusListener)
+
 
 frame.show()
