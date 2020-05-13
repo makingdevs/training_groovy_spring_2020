@@ -22,7 +22,10 @@ frame.contentPane.add new JTextField("Texto")
 button.addActionListener(
   { JOptionPane.showMessageDialog(frame, "Cliqueaste papuh!!!") } as ActionListener )
 
+displayMouseLocation = { positionLabel.setText("$it.x , $it.y") }
 
+frame.addMouseListener( displayMouseLocation as MouseListener )
+frame.addMouseMotionListener( displayMouseLocation as MouseMotionListener )
 
 
 frame.show()
