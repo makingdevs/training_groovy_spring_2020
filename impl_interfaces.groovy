@@ -34,5 +34,13 @@ handleFocus = [
 
 button.addFocusListener( handleFocus as FocusListener)
 
+events = [ 'WindowListener','ComponentListener' ]
+
+handler = { msgLabel.setText "$it" }
+
+for(event in events){
+    handlerImpl = handler.asType(Class.forName("java.awt.event.${event}"))
+    frame."add${event}"(handlerImpl)
+}
 
 frame.show()
