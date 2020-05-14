@@ -6,12 +6,9 @@ def tiempo(posicion, funcion) {
   println "Fibonacci($posicion): $resultado, tiempo total: $tiempoTotal"
 }
 
-serieFibonacci = [0: 1, 1: 1]
+def fibonacci
+fibonacci = { posicion ->
+  posicion < 2 ? 1 : fibonacci(posicion - 1) + fibonacci(posicion - 2)
+}.memoize()
 
-def fibonacciConSerieAlmacenada(position) {
-  if(!serieFibonacci.containsKey(position))
-    serieFibonacci[position] = fibonacciConSerieAlmacenada(position - 1) + fibonacciConSerieAlmacenada(position - 2)
-    serieFibonacci[position]
-}
-
-tiempo(40) { posicion -> fibonacciConSerieAlmacenada(posicion)}
+tiempo(40) { posicion -> fibonacci(posicion) }
