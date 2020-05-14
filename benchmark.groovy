@@ -6,3 +6,11 @@ def tiempo(posicion, funcion) {
   println "Fibonacci($posicion): $resultado, tiempo total: $tiempoTotal"
 }
 
+def fibonacci(posicion) {
+  if (posicion < 2)
+    1
+  else
+    fibonacci(posicion - 1) + fibonacci(posicion - 2)
+}
+
+tiempo(8) { posicion -> fibonacci(posicion)}
