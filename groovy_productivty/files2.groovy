@@ -10,3 +10,6 @@ document = new File("git-cheat-sheet_jrebel.pdf")
 new File("copy.pdf").withOutputStream { out ->
   out.write(document.bytes)
 }
+// println document.bytes
+
+"cp git-cheat-sheet_jrebel.pdf git_sheet.pdf".execute()
