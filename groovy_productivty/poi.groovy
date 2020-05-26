@@ -28,13 +28,13 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook
  *
  * @author Yegor Kozlov
  */
-public final class BusinessPlan {
+final class BusinessPlan {
 
-  private static final String[] titles = [
+  static final String[] titles = [
     "ID", "Project Name", "Owner", "Days", "Start", "End"]
 
   //sample data to fill the sheet.
-  private static final String[][] data = [
+  static final String[][] data = [
     ["1.0", "Marketing Research Tactical Plan", "J. Dow", "70", "9-Jul", null,
     "x", "x", "x", "x", "x", "x", "x", "x", "x", "x", "x"],
     null,
@@ -70,9 +70,9 @@ public final class BusinessPlan {
     null, null, null, null,  null, "x", null, null, null, null, null],
   ]
 
-  private BusinessPlan() {}
+  BusinessPlan() {}
 
-  public static void main(String[] args) throws Exception {
+  static void main(String[] args) throws Exception {
     Workbook wb
 
     if(args.length > 0 && args[0].equals("-xls")) wb = new HSSFWorkbook()
@@ -204,8 +204,8 @@ public final class BusinessPlan {
   /**
    * create a library of cell styles
    */
-  private static Map<String, CellStyle> createStyles(Workbook wb){
-    Map<String, CellStyle> styles = new HashMap<>()
+  static Map<String, CellStyle> createStyles(Workbook wb){
+    Map<String, CellStyle> styles = [:]
     DataFormat df = wb.createDataFormat()
 
     CellStyle style
@@ -308,7 +308,7 @@ public final class BusinessPlan {
     return styles
   }
 
-  private static CellStyle createBorderedStyle(Workbook wb){
+  static CellStyle createBorderedStyle(Workbook wb){
     BorderStyle thin = BorderStyle.THIN
     short black = IndexedColors.BLACK.getIndex()
 
