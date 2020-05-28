@@ -14,6 +14,14 @@ frame = new SwingBuilder().frame(
     button.text = "Presionado ${counter} veces"
     label.text = "Mostrado ${counter} veces"
   })
+  slider()
+  comboBox(items: ['uno','dos','tres'])
+  menuBar {
+    menu('File') {
+      menuItem "New..."
+      menuItem "Open..."
+    }
+  }
 }
 
 frame.show()
