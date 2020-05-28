@@ -9,7 +9,7 @@ dbParams = [
   password: 'makingdevs',
   driver: 'com.mysql.jdbc.Driver']
 
-sql = Sql.newInstance(dbParams.url, dbParams.user, dbParams.password, dbParams.driver)
+sql = Sql.newInstance(dbParams)
 
 sql.execute "drop table if exists issue;"
 sql.execute """
