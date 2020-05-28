@@ -6,6 +6,10 @@ frame = new SwingBuilder().frame(
   layout: new java.awt.FlowLayout(),
   defaultCloseOperation: javax.swing.WindowConstants.EXIT_ON_CLOSE
 ) {
+  label = label(text: "Value")
+  button = button(text: "Puchurrame!", actionPerformed: {
+    println "new Date()"
+  })
 }
 
 frame.show()
