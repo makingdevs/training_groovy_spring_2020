@@ -3,6 +3,9 @@
 
 import groovy.sql.Sql
 
+startTime = System.currentTimeMillis()
+dbs = ["db1","db2","db3"]
+
 dbParams = [
   url: 'jdbc:mysql://localhost/groovy_training',
   user: 'makingdevs',
@@ -51,3 +54,6 @@ issues.each {
 }
 
 dataset.add([description: "The last issue", priority: 1, date_created: new Date() - 10])
+
+endTime = System.currentTimeMillis()
+println "Time: ${endTime - startTime}"
