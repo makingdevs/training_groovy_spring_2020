@@ -49,3 +49,5 @@ println issues.sql
 issues.each {
   println it
 }
+
+dataset.add([description: "The last issue", priority: 1, date_created: new Date() - 10])
