@@ -1,5 +1,7 @@
 import groovy.swing.SwingBuilder
 
+counter = 0
+
 frame = new SwingBuilder().frame(
   title: "MakingDevs",
   size: [400, 300],
@@ -8,7 +10,9 @@ frame = new SwingBuilder().frame(
 ) {
   label = label(text: "Value")
   button = button(text: "Puchurrame!", actionPerformed: {
-    println "new Date()"
+    counter++
+    button.text = "Presionado ${counter} veces"
+    label.text = "Mostrado ${counter} veces"
   })
 }
 
