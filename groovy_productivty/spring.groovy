@@ -11,7 +11,7 @@ import org.springframework.jdbc.core.RowMapper
 dataSource = new DriverManagerDataSource("jdbc:mysql://localhost/groovy_training", "makingdevs", "makingdevs")
 dataSource.driverClassName = "com.mysql.jdbc.Driver"
 jdbcTemplate = new JdbcTemplate(dataSource: dataSource)
-println jdbcTemplate.properties
+// println jdbcTemplate.properties
 
 counter = jdbcTemplate.queryForObject("select count(*) from issue", Integer)
 println "There are ${counter} issues"

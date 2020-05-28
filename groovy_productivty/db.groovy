@@ -33,3 +33,19 @@ sql.execute """
   ('No se puede capturar receptor',4,now()),
   ('No se puede acceder al sistema',1,now());
 """
+
+sql.eachRow("select * from issue") { row ->
+  //println row
+}
+
+insertInstruction = "insert into issue(description, priority, date_created) values(?,?,?);"
+params = ["error en pantalla", -10, new Date() - 1]
+
+sql.execute insertInstruction, params
+
+dataset = sql.dataSet('issue')
+issues = dataset.findAll { r -> r.id >= 3 && r.id <= 6 }
+println issues.sql
+issues.each {
+  println it
+}
