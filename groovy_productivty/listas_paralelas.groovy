@@ -1,3 +1,5 @@
+import static groovyx.gpars.GParsPool.withPool
+
 def benchmark(function) {
   def startTime = System.currentTimeMillis()
   function()
@@ -8,8 +10,10 @@ def benchmark(function) {
 procesos = [300,500,100,900,400,300,400,1100,1500,100,200]
 
 benchmark {
-  procesos.each { t ->
-    Thread.sleep(t)
-    println "Finish job: ${t}"
+  withPool {
+    procesos.eachParallel { t ->
+      Thread.sleep(t)
+      println "Finish job: ${t}"
+    }
   }
 }
