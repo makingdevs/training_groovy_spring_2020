@@ -1,5 +1,6 @@
 import groovy.json.JsonSlurper
 
+@Singleton
 class BuscadorDeCervecerias {
 
   static metodoApi = "search/brewery"
