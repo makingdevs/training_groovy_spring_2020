@@ -23,7 +23,7 @@ def requestSoap(Date date) {
 today = new Date()
 
 withPool {
-  (today-40..today-20).collectParallel { d ->
+  (today-60..today-20).collectParallel { d ->
   //rates = (today-60..today-10).collect { d ->
     println "${d.format('dd-MM-yyyy')} : " + requestSoap(d)
   }
