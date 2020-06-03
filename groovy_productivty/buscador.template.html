@@ -12,5 +12,15 @@
     <button type="submit">Buscar</button>
   </form>
 
+  <%
+   if(breweries)
+      out << "<h2>$message</h2>"
+      out << "<ul>"
+      breweries.each { b ->
+        out << "<li> ${b.nombre} <img src='${b.urlDeImagen}'/> </li>"
+      }
+      out << "</ul>"
+  %>
+
 </body>
 </html>
